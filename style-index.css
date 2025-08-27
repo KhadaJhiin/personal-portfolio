@@ -1,4 +1,5 @@
 :root{
+    --basicBlack : #000000;
     --mainBackgroundColor: #021526;
     --mainTextColor : #FFFFFF;
     --highlightedTextColor : #64FFDA;
@@ -11,21 +12,75 @@
 
 body{
     font-size: 16px;
+}
+
+.main__container{
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
-    margin: 1rem 1rem;
+    padding: 8% 8% 0 8%;
 }
 
+/* HEADER----------------------------> */
+
+/* ------HEADER MOBILE */
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
-.header__lang,
-.header__nav{
+.header__lang{
     display: none;
+}
+.header__nav{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100vh;
+    background-color: var(--basicBlack);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: left 0.3s ease-in-out;
+    z-index: 100;
+    border-right: 1px solid var(--highlightedTextColor);
+}
+
+.nav__ul_num{
+    color: var(--highlightedTextColor);
+    background-color: var(--basicBlack);
+}
+
+.header__nav--open{
+    left: 0;
+}
+
+.nav__logo{
+    max-width: 100px;
+    padding-top: 25px;
+    background: var(--basicBlack);
+}
+
+.nav__logo img{
+    background: var(--basicBlack);
+}
+
+.header__nav ul{
+    position: fixed;
+    top: 200px;
+    background: var(--basicBlack);
+}
+
+.header__nav ul li{
+    margin-top: 20px;
+    background: var(--basicBlack);
+}
+
+.header__nav ul li a{
+    background: var(--basicBlack);
 }
 
 .header__logo{
@@ -37,5 +92,34 @@ header{
     max-width: 50px;
     cursor: pointer;
 }
+/* ------HEADER MOBILE */
 
+/* ------HEADER TABLET AND DESKTOP */
+@media (min-width: 768px){
+    .header__nav {
+    position: static;
+    height: auto;
+    width: auto;
+    background: none;
+    display: block;
+    transition: none;
+    }
+
+    .header__nav ul {
+    display: flex;
+    gap: 1.5rem;
+    }
+
+    .header__nav ul li {
+    margin: 0;
+    }
+
+    .header__menu-btn {
+    display: none; /* no se ve en desktop */
+    }
+}
+
+/* ------HEADER TABLET AND DESKTOP */
+
+/* HEADER----------------------------> */
 
