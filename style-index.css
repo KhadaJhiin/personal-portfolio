@@ -6,12 +6,12 @@
 }
 
 *{
-    background-color: var(--mainBackgroundColor);
     color: var(--mainTextColor);
 }
 
 body{
     font-size: 16px;
+    background-color: var(--mainBackgroundColor);
 }
 
 .main__container{
@@ -26,14 +26,9 @@ body{
 /* ------HEADER MOBILE */
 header{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+    justify-content: right;
 }
 
-.header__lang{
-    display: none;
-}
 .header__nav{
     position: fixed;
     top: 0;
@@ -43,15 +38,14 @@ header{
     background-color: var(--basicBlack);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     transition: left 0.3s ease-in-out;
     z-index: 100;
     border-right: 1px solid var(--highlightedTextColor);
-}
-
-.nav__ul_num{
-    color: var(--highlightedTextColor);
-    background-color: var(--basicBlack);
+    padding-top: 25px;
+    padding-bottom: 50px;
+    padding: 25px 0 50px 0;
 }
 
 .header__nav--open{
@@ -60,39 +54,46 @@ header{
 
 .nav__logo{
     max-width: 100px;
-    padding-top: 25px;
-    background: var(--basicBlack);
 }
 
-.nav__logo img{
-    background: var(--basicBlack);
+.nav__ul_num{
+    color: var(--highlightedTextColor);
 }
 
 .header__nav ul{
-    position: fixed;
-    top: 200px;
-    background: var(--basicBlack);
+    padding-bottom: 70px;
 }
 
 .header__nav ul li{
     margin-top: 20px;
-    background: var(--basicBlack);
 }
 
-.header__nav ul li a{
-    background: var(--basicBlack);
+.nav__curriculum{
+    display: flex;
+    justify-content: center;
+    background-color: var(--highlightedTextColor);
+    color: var(--basicBlack);
 }
 
-.header__logo{
-    display: inline-block;
-    max-width: 140px;
+.header__lang{
+    display: flex;
+    gap: 5px;
+}
+
+.header__lang img{
+    width: 20px;
 }
 
 .header__menu-btn{
     max-width: 50px;
     cursor: pointer;
 }
+
+.header__logo{
+    display: none;
+}
 /* ------HEADER MOBILE */
+
 
 /* ------HEADER TABLET AND DESKTOP */
 @media (min-width: 768px){
@@ -118,7 +119,6 @@ header{
     display: none; /* no se ve en desktop */
     }
 }
-
 /* ------HEADER TABLET AND DESKTOP */
 
 /* HEADER----------------------------> */
