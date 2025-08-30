@@ -1,17 +1,20 @@
 const menuBtn = document.querySelector(".header__menu-btn");
 const nav = document.querySelector(".header__nav");
-const langButton = document.querySelector(".header__lang");
-const lang = document.querySelector(".lang__selected");
+const langButtons = document.querySelectorAll(".header__lang, .lang__selector");
+const lang = document.querySelectorAll(".lang__selected");
 
 menuBtn.addEventListener("click", ()=>{
     nav.classList.toggle("header__nav--open");
 });
 
-langButton.addEventListener("click", ()=>{
-    if(lang.textContent === "en"){
-        lang.textContent = "es";
-    }else{
-        lang.textContent = "en";
-    };
+langButtons.forEach(element =>{
+    element.addEventListener("click",()=>{
+        lang.forEach(item =>{
+            if(item.textContent === "English"){
+                item.textContent = "Spanish";
+            }else{
+                item.textContent = "English";
+            }
+        });
+    })
 });
-

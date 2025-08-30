@@ -18,7 +18,7 @@ body{
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
-    padding: 8% 8% 0 8%;
+    padding: 40px 8% 40px 8%;
 }
 
 /* HEADER----------------------------> */
@@ -40,11 +40,9 @@ header{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    transition: left 0.3s ease-in-out;
+    transition: left 0.5s ease-in-out;
     z-index: 100;
     border-right: 1px solid var(--highlightedTextColor);
-    padding-top: 25px;
-    padding-bottom: 50px;
     padding: 25px 0 50px 0;
 }
 
@@ -92,32 +90,72 @@ header{
 .header__logo{
     display: none;
 }
+
+.lang__selector{
+    display: none;
+}
 /* ------HEADER MOBILE */
 
 
 /* ------HEADER TABLET AND DESKTOP */
 @media (min-width: 768px){
-    .header__nav {
-    position: static;
-    height: auto;
-    width: auto;
-    background: none;
-    display: block;
-    transition: none;
+    header{
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .header__nav ul {
-    display: flex;
-    gap: 1.5rem;
+    .header__logo{
+        display: block;
+        max-width: 150px;
     }
 
-    .header__nav ul li {
-    margin: 0;
+    .header__nav{
+        background-color: var(--mainBackgroundColor);
+        position: static;
+        justify-content: space-around;
+        width: auto;
+        height: auto;
+        flex-direction: row;
+        border-right: none;
+        padding: 0;
     }
 
-    .header__menu-btn {
-    display: none; /* no se ve en desktop */
+    .header__nav ul{
+        padding: 0;
+        display: flex;
+        gap: 15px;
     }
+
+    .header__nav ul li{
+        margin: 0;
+    }
+
+    .header__menu-btn{
+        display: none;
+    }
+
+    .nav__logo{
+        display: none;
+    }
+
+    .header__lang{
+        display: none;
+    }
+
+    /* MAIN----------------------------> */
+
+    .lang__wrapper{
+        display: flex;
+        justify-content: right;
+    }
+
+    .lang__selector{
+        display: flex;
+        max-width: 25px;
+        gap: 5px;
+        margin-right: 55px;
+    }
+
 }
 /* ------HEADER TABLET AND DESKTOP */
 
