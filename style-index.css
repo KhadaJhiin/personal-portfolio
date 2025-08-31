@@ -66,12 +66,15 @@ header{
     margin-top: 20px;
 }
 
-.nav__curriculum{
-    display: flex;
-    justify-content: center;
-    background-color: var(--highlightedTextColor);
-    color: var(--basicBlack);
+.header__nav ul li a{
+    text-decoration: none;
 }
+
+.header__nav ul li a:hover{
+    color: var(--highlightedTextColor);
+}
+
+/* Aqui va todo el codigo para el boton de curriculum */
 
 .header__lang{
     display: flex;
@@ -151,9 +154,9 @@ header{
 
     .lang__selector{
         display: flex;
-        max-width: 25px;
+        max-width: 20px;
         gap: 5px;
-        margin-right: 55px;
+        margin-right: 57px;
     }
 
 }
