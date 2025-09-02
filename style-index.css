@@ -21,9 +21,27 @@ body{
     padding: 40px 8% 40px 8%;
 }
 
-/* HEADER----------------------------> */
-
 /* ------HEADER MOBILE */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 header{
     display: flex;
     justify-content: right;
@@ -41,7 +59,7 @@ header{
     justify-content: space-between;
     align-items: center;
     transition: left 0.5s ease-in-out;
-    z-index: 100;
+    z-index: 200;
     border-right: 1px solid var(--highlightedTextColor);
     padding: 25px 0 50px 0;
 }
@@ -115,6 +133,7 @@ header{
 .header__menu-btn{
     max-width: 50px;
     cursor: pointer;
+    z-index: 300;
 }
 
 .header__logo{
@@ -124,16 +143,55 @@ header{
 .lang__selector{
     display: none;
 }
+
 /* ------HEADER MOBILE */
 
 
-/* ------HEADER TABLET AND DESKTOP */
+/* ------MAIN MOBILE */
+
+.lang__wrapper{
+    display: none;
+}
+
+.about__lamp_img{
+    display: none;
+}
+
+.about__info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.about__title{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--highlightedTextColor);
+    font-size: 2rem;
+}
+
+.about__text{
+    text-align: justify
+}
+
+.about__text_highlight{
+    color: var(--highlightedTextColor);
+}
+
+/* ------MAIN MOBILE */
+
+
+/* -----------------------------------------------------------------TABLET AND DESKTOP */
+
 @media (min-width: 768px){
+
+    /* ------HEADER */
+    
     header{
         justify-content: space-between;
         align-items: center;
     }
-
+    
     .header__logo{
         display: block;
         max-width: 150px;
@@ -156,25 +214,27 @@ header{
         gap: 15px;
         align-items: center;
     }
-
+    
     .header__nav ul li{
         margin: 0;
     }
-
+    
     .header__menu-btn{
         display: none;
     }
-
+    
     .nav__logo{
         display: none;
     }
-
+    
     .header__lang{
         display: none;
     }
 
-    /* MAIN----------------------------> */
+    /* ------HEADER */
 
+    /* ------MAIN */
+    
     .lang__wrapper{
         display: flex;
         justify-content: right;
@@ -191,8 +251,8 @@ header{
         color: var(--highlightedTextColor);
     }
 
-}
-/* ------HEADER TABLET AND DESKTOP */
+    /* ------MAIN */
 
-/* HEADER----------------------------> */
+}
+
 
