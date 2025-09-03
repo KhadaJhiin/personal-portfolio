@@ -3,6 +3,7 @@
     --mainBackgroundColor: #021526;
     --mainTextColor : #FFFFFF;
     --highlightedTextColor : #64FFDA;
+    box-sizing: border-box;
 }
 
 *{
@@ -177,6 +178,46 @@ header{
 .about__text_highlight{
     color: var(--highlightedTextColor);
 }
+
+.about__image_section{
+    border: 1px solid var(--highlightedTextColor);
+    margin: 25px auto;
+}
+
+.swiper{
+    width: 100%;
+}
+
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    max-width: 768px;
+}
+
+.swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 200px;
+}
+
+.swiper-pagination {
+    position: relative;  
+    margin-top: -15px;   
+    text-align: center;  
+}
+
+.swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: #ccc;    
+    opacity: 1;           
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--highlightedTextColor); 
+}
+
 
 /* ------MAIN MOBILE */
 

@@ -29,6 +29,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="assets/indexAssets/faviconJM.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style-index.css">
     <title>Portfolio JM</title>
@@ -36,6 +37,8 @@
 
 <body>
     <div class="overlay"></div>
+
+
     <div class="main__container">
         <header>
             <a href="index.html" class="header__logo">
@@ -88,9 +91,30 @@
                         I’m a certificated software developer, my experience is few, but I’ve been in constant improvement 
                         of my skills. <span class="about__text_highlight">You</span> are <span class="about__text_highlight">Welcome</span>... 
                     </p>
+
                     <div class="about__image_section">
-                        image's section goes here!!!!
+
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/slider-about/1-dsktop.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/slider-about/2-me.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/slider-about/3-animals.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/slider-about/4-hobies.webp" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/slider-about/5-sights.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </section>
         </main>
@@ -100,6 +124,9 @@
             footer
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- https://www.youtube.com/watch?v=gJEEzvitXO8 -->
