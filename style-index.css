@@ -44,8 +44,16 @@ body{
 }
 
 header{
-    display: flex;
-    justify-content: right;
+    /* display: flex;
+    justify-content: right; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+header.hide{
+    transform: translateY(-100%);
 }
 
 .header__nav{
@@ -135,6 +143,10 @@ header{
     max-width: 50px;
     cursor: pointer;
     z-index: 300;
+}
+
+.header__menu-btn--open{
+    position: fixed;
 }
 
 .header__logo{
