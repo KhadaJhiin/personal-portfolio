@@ -1,4 +1,5 @@
 let lastScroll = 0;
+const header = document.querySelector(".header");
 const menuBtn = document.querySelector(".header__menu-btn");
 const nav = document.querySelector(".header__nav");
 const overlay = document.querySelector(".overlay");
@@ -49,9 +50,13 @@ window.addEventListener("scroll", () => {
 
     if (currentScroll > lastScroll && currentScroll > 30) {
         menuBtn.classList.add("hide");
+        header.classList.add("hide");
     }else {
         menuBtn.classList.remove("hide");
+        header.classList.remove("hide");
     }
 
     lastScroll = currentScroll;
 });
+
+

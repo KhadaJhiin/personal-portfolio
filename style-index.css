@@ -51,16 +51,17 @@ body.noscroll {
     position: fixed;
     top: 0;
     left: -100%;
-    width: 40%;
+    width: 200px;
     height: 100vh;
     background-color: var(--basicBlack);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     transition: left 0.5s ease-in-out;
     z-index: 200;
+    border-top: 1px solid var(--highlightedTextColor);
     border-right: 1px solid var(--highlightedTextColor);
+    border-bottom: 1px solid var(--highlightedTextColor);
     padding: 25px 0 50px 0;
 }
 
@@ -72,12 +73,18 @@ body.noscroll {
     max-width: 100px;
 }
 
-.nav__ul_num{
-    color: var(--highlightedTextColor);
+.header__lang{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 100px;
 }
 
-.header__nav ul{
-    padding-bottom: 70px;
+.header__lang img{
+    width: 20px;
+}
+
+.nav__ul_num{
+    color: var(--highlightedTextColor);
 }
 
 .header__nav ul li{
@@ -114,15 +121,6 @@ body.noscroll {
 
 .nav__curriculum::after {
     display: none !important;
-}
-
-.header__lang{
-    display: flex;
-    gap: 5px;
-}
-
-.header__lang img{
-    width: 20px;
 }
 
 .header__lang:hover span{
@@ -240,9 +238,24 @@ body.noscroll {
 
     /* ------HEADER */
     
-    header{
+    .header{
+        position: fixed;
+        top: 0;
+        right: 8%;
+        left: 8%;
+        width: 84%;
+        height: 157px;
+        display: flex;
+        padding-top: 50px;
         justify-content: space-between;
         align-items: center;
+        background-color: var(--mainBackgroundColor);
+        z-index: 1000;
+        transition: transform 0.5s ease;
+    }
+
+    .header.hide{
+        transform: translateY(-100%);
     }
     
     .header__logo{
@@ -259,6 +272,9 @@ body.noscroll {
         flex-direction: row;
         border-right: none;
         padding: 0;
+        border-top: none;
+        border-right: none;
+        border-bottom: none;
     }
     
     .header__nav ul{
@@ -284,13 +300,11 @@ body.noscroll {
         display: none;
     }
 
-    /* ------HEADER */
-
-    /* ------MAIN */
-    
     .lang__wrapper{
         display: flex;
-        justify-content: right;
+        position: fixed;
+        top: 132px;
+        right: 8%;
     }
 
     .lang__selector{
@@ -303,6 +317,11 @@ body.noscroll {
     .lang__selector:hover span{
         color: var(--highlightedTextColor);
     }
+    
+    /* ------HEADER */
+
+    /* ------MAIN */
+    
 
     /* ------MAIN */
 
