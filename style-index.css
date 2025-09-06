@@ -160,7 +160,14 @@ body.noscroll {
 /* ------MAIN MOBILE */
 
 .introduction{
-    padding-top: 150px;
+    min-height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.introduction p{
+    color:;
 }
 
 .intro__highlighted{
@@ -286,7 +293,6 @@ body.noscroll {
         background-color: transparent;
         position: static;
         justify-content: space-around;
-        align-items: center;
         width: auto;
         height: auto;
         flex-direction: row;
@@ -302,6 +308,7 @@ body.noscroll {
         display: flex;
         gap: 15px;
         align-items: center;
+        margin-top: 5px;
     }
     
     .header__nav ul li{
