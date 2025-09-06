@@ -1,4 +1,5 @@
-let lastScroll = 0;
+let lastScrollMobile = 0;
+let lastScrollDesktop = 0;
 const header = document.querySelector(".header");
 const menuBtn = document.querySelector(".header__menu-btn");
 const nav = document.querySelector(".header__nav");
@@ -45,18 +46,26 @@ langButtons.forEach(element =>{
     })
 });
 
+
 window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
 
-    if (currentScroll > lastScroll && currentScroll > 30) {
-        menuBtn.classList.add("hide");
-        header.classList.add("hide");
-    }else {
-        menuBtn.classList.remove("hide");
-        header.classList.remove("hide");
+    if (window.innerWidth <= 768) {
+        if (currentScroll > lastScrollMobile && currentScroll > 50) {
+            menuBtn.classList.add("hide");
+        } else {
+            menuBtn.classList.remove("hide");
+        }
+        lastScrollMobile = currentScroll;
+    } else {
+        if (currentScroll > lastScrollDesktop && currentScroll > 50) {
+            header.classList.add("hide");
+        } else {
+            header.classList.remove("hide");
+        }
+        lastScrollDesktop = currentScroll;
     }
-
-    lastScroll = currentScroll;
 });
+
 
 

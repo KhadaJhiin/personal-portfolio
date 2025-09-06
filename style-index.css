@@ -53,16 +53,15 @@ body.noscroll {
     left: -100%;
     width: 200px;
     height: 100vh;
-    background-color: var(--basicBlack);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: left 0.5s ease-in-out;
     z-index: 200;
-    border-top: 1px solid var(--highlightedTextColor);
     border-right: 1px solid var(--highlightedTextColor);
-    border-bottom: 1px solid var(--highlightedTextColor);
     padding: 25px 0 50px 0;
+    overflow-y: auto;
 }
 
 .header__nav--open{
@@ -105,6 +104,7 @@ body.noscroll {
     border: 1px solid var(--highlightedTextColor);
     border-radius: 4px;
     padding: 0.75rem 1rem;
+    margin-bottom: 15px;
     line-height: 1;
     text-decoration: none;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -151,13 +151,20 @@ body.noscroll {
     display: none;
 }
 
+.lang__wrapper{
+    display: none;
+}
 /* ------HEADER MOBILE */
 
 
 /* ------MAIN MOBILE */
 
-.lang__wrapper{
-    display: none;
+.introduction{
+    padding-top: 150px;
+}
+
+.intro__highlighted{
+    color: var(--highlightedTextColor);
 }
 
 .about{
@@ -236,25 +243,37 @@ body.noscroll {
 
 @media (min-width: 768px){
 
+    body.noscroll {
+        overflow: visible;
+    }
+
+    .overlay {
+        display: none;
+    }
+
     /* ------HEADER */
     
     .header{
         position: fixed;
         top: 0;
-        right: 8%;
-        left: 8%;
-        width: 84%;
+        right: 0;
+        left: 0;
+        width: 100%;
+        padding-right: 8%;
+        padding-left: 8%;
         height: 157px;
         display: flex;
         padding-top: 50px;
         justify-content: space-between;
         align-items: center;
-        background-color: var(--mainBackgroundColor);
+        background-color: rgba(2, 21, 38, 0.7);
+        backdrop-filter: blur(10px);  
         z-index: 1000;
+        
         transition: transform 0.5s ease;
     }
 
-    .header.hide{
+    .header.hide {
         transform: translateY(-100%);
     }
     
@@ -264,9 +283,10 @@ body.noscroll {
     }
 
     .header__nav{
-        background-color: var(--mainBackgroundColor);
+        background-color: transparent;
         position: static;
         justify-content: space-around;
+        align-items: center;
         width: auto;
         height: auto;
         flex-direction: row;
@@ -302,8 +322,8 @@ body.noscroll {
 
     .lang__wrapper{
         display: flex;
-        position: fixed;
-        top: 132px;
+        position: absolute;
+        top: 84%;
         right: 8%;
     }
 
@@ -321,8 +341,11 @@ body.noscroll {
     /* ------HEADER */
 
     /* ------MAIN */
-    
 
+    .about{
+        padding-top: 120px;
+    }
+        
     /* ------MAIN */
 
 }
