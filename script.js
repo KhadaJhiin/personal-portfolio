@@ -50,7 +50,7 @@ langButtons.forEach(element =>{
 window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
         if (currentScroll > lastScrollMobile && currentScroll > 50) {
             menuBtn.classList.add("hide");
         } else {
