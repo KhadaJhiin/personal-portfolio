@@ -7,8 +7,11 @@ const overlay = document.querySelector(".overlay");
 const langButtons = document.querySelectorAll(".header__lang, .lang__selector");
 const lang = document.querySelectorAll(".lang__selected");
 const logo = document.querySelector(".header__logo");
+const sections = document.querySelectorAll(".section");
 
 
+// ---------------------------------------Swiper section
+// ---------------------------------------Swiper section
 const swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -18,12 +21,34 @@ const swiper = new Swiper(".mySwiper", {
     speed: 1000,
 
     pagination: {
-        el: ".swiper-pagination",
+        el: ".about-pagination",
         clickable: true,
     }
 });
 
-const sections = document.querySelectorAll(".section");
+const experienceSwiper = new Swiper(".my-slider", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides:false,
+    slidesPerView: "auto",
+    spaceBetween: 2,
+    loop:false,
+    speed: 1000,
+
+    pagination: {
+        el: ".experience-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + (index + 1) + '</span>';
+        }
+    },
+});
+
+// ---------------------------------------Swiper section
+// ---------------------------------------Swiper section
+
+
+
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

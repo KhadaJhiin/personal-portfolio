@@ -3,6 +3,10 @@
     --mainBackgroundColor: #021526;
     --mainTextColor : #FFFFFF;
     --highlightedTextColor : #64FFDA;
+    --htmlColor : #E34F26;
+    --sassColor : #CC6699;
+    --jsColor : #F7DF1E;
+    --reactColor: #61DAFB;
 }
 
 *{
@@ -192,6 +196,7 @@ body{
 /*----MAIN------*/
 
 .section{
+    min-height: calc(100vh - 120px);
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -210,7 +215,6 @@ body{
 }
 
 .introduction{
-    min-height: calc(100vh - 120px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -245,6 +249,12 @@ body{
     transform: translateY(-2px);
 }
 
+.about{
+    display: flex;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
 .about__lamp_img{
     display: none;
 }
@@ -256,7 +266,8 @@ body{
 }
 
 .about__text{
-    text-align: justify
+    text-align: justify;
+    font-size: clamp(1rem, 1vw + 1.3vh, 1.3rem);
 }
 
 .about__text_highlight{
@@ -268,53 +279,204 @@ body{
     margin: 25px auto;
 }
 
-.swiper{
+.mySwiper{
     width: 100%;
 }
 
-.swiper-slide{
+.mySwiper .swiper-slide{
     background-position: center;
     background-size: cover;
     width: 100%;
 }
 
-.swiper-slide img{
+.mySwiper .swiper-slide img{
     display: block;
     width: 100%;
     height: 180px;
 }
 
-.swiper-pagination {
+.about-pagination {
     position: relative;  
     margin-top: -15px;   
     text-align: center;  
 }
 
-.swiper-pagination-bullet {
+.about-pagination .swiper-pagination-bullet {
     width: 6px;
     height: 6px;
     background: #ccc;    
     opacity: 1;           
 }
 
-.swiper-pagination-bullet-active {
+.about-pagination .swiper-pagination-bullet-active {
     background: var(--highlightedTextColor); 
 }
 
-
-/*----FOOTER----*/
-/*----FOOTER----*/
-/*----FOOTER----*/
-
-/* ---------------------------------------------------------------------------MOBILE M */
-/* ---------------------------------------------------------------------------MOBILE M */
-/* ---------------------------------------------------------------------------MOBILE M */
-@media (min-width: 400px){
-    
+.lineTop{
+    margin-left: auto;
+    width: 83%;
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--highlightedTextColor);
 }
-/*----HEADER----*/
-/*----HEADER----*/
-/*----HEADER----*/
+
+.my-slider{
+    width: 100%;
+}
+
+.experience__title{
+    font-size: clamp(1.2rem, 1.2vw + 1.7vh, 1.8rem);
+    /* font-size: 1.25rem; */
+    margin-left: auto;
+    color: var(--highlightedTextColor);
+}
+
+.experience__time{
+    font-size: clamp(0.5rem, 0.7vw + 1vh, 0.8rem);
+    margin-left: auto;
+}
+
+.experience__item{
+    width: 100%;
+}
+
+.experience__item span{
+    color: var(--highlightedTextColor);
+}
+
+.experience__image{
+    display: none;
+}
+
+.experience__text{
+    margin-top: 20px;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: clamp(1rem, 1vw + 1.3vh, 1.3rem);
+}
+
+.experience__skills{
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+.experience__skills ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+.experience__skills ul li{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.skills__icon_container{
+    width: 40px;
+}
+
+.experience__skills ul li i{
+    font-size: 1.2rem;
+}
+
+.fa-html5{
+    color: var(--htmlColor);
+}
+
+.fa-sass{
+    color: var(--sassColor);
+}
+
+.fa-react{
+    color: var(--reactColor);
+}
+
+.fa-square-gitlab{
+    color: var(--htmlColor);
+}
+
+.skills__line{
+    width: 60%;
+    height: 2px;
+}
+
+.line__html{
+    background-color: var(--htmlColor);
+}
+
+.line__sass{
+    background-color: var(--sassColor);
+}
+
+.line__react{
+    background-color: var(--reactColor);
+}
+
+.line__gitlab{
+    background-color: var(--htmlColor);
+}
+
+.lineBot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.lineBot span{
+    flex: 1;
+    height: 1px;
+    background-color: var(--highlightedTextColor);
+}
+
+.lineBot span:first-child{
+    margin-right: 20%;
+}
+
+.lineBot span:last-child{
+    margin-left: 20%;
+}
+
+.experience__item{
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-pagination{
+    position: relative;  
+    display: flex;
+    justify-content: center;
+}
+
+.experience-pagination .swiper-pagination-bullet{
+    width: 30px;
+    height: 15px;
+    border-radius: 2px;       
+    background: transparent;  
+    border: 1px solid var(--highlightedTextColor);
+    color: var(--highlightedTextColor);
+    font-size: 0.5rem;
+    opacity: 1;              
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.experience-pagination .swiper-pagination-bullet-active {
+    background: var(--highlightedTextColor);
+    color: var(--basicBlack);
+}
+
+
+
+
+/*----FOOTER----*/
+/*----FOOTER----*/
+/*----FOOTER----*/
 
 /* ---------------------------------------------------------------------------MOBILE l */
 /* ---------------------------------------------------------------------------MOBILE l */
@@ -335,8 +497,22 @@ body{
     /*----HEADER----*/
     /*----HEADER----*/
     /*----HEADER----*/
-    .swiper-slide img{
+    .mySwiper .swiper-slide img{
         height: 250px;
+    }
+
+    .experience__image{
+        display: block;
+        width: 100%;
+        margin-top: 35px;
+        margin-bottom: 20px;
+    }
+
+    .experience__image img{
+        width: 100%;
+        min-width: 100px;
+        max-width: 450px;
+        margin-left: auto;
     }
 }
 
@@ -368,35 +544,26 @@ body{
     /*----MAIN----*/
     .introduction{
         min-height: calc(100vh - 200px);
-        /* font-size: 1.5rem; */
         padding-bottom: 250px;
     }
-
-    /* .intro__title_name{
-        font-size: 3rem;
-    } */
-
-    /* .intro__social i{
-        font-size: 2rem;
-    } */
 
     .section__title{
         margin-bottom: 40px;
         font-size: 2.5rem;
     }
 
-    .about__text{
-        font-size: 1.3rem;
-    }
-
     .about__image_section{
         margin: 60px auto;
     }
 
-    .swiper-slide img{
+    .mySwiper .swiper-slide img{
         display: block;
         width: 100%;
         height: 330px;
+    }
+
+    .experience__skills ul li i{
+        font-size: 1.7rem;
     }
 
 }
@@ -508,14 +675,16 @@ body{
     }
 
     .about__lamp_img{
+        position: relative;
         display: flex;
         min-width: 30%;
         align-items: flex-end;
-        margin-bottom: 55px;
+        min-height: 750px;
     }
-
+    
     .about__lamp_img img{
         width: 100%;
+        margin-bottom: 6%;
     }
 
     .about__info{
@@ -526,12 +695,24 @@ body{
         font-size: 2rem;
     }
 
-    .about__text{
-        font-size: 0.9rem;
+    .mySwiper .swiper-slide img{
+        height: 220px;
     }
 
-    .swiper-slide img{
-        height: 220px;
+    .experience__text{
+        width: 67%;
+        margin-left: auto;    
+        margin-bottom: 50px;
+        font-size: clamp(1rem, 1vw + 1.3vh, 1.3rem);
+    }
+
+    .experience__skills{
+        margin-left: 0px;
+    }
+
+    .skills__line{
+        width: 40%;
+        height: 2px;
     }
         
     /*----FOOTER----*/
@@ -552,15 +733,11 @@ body{
         margin-bottom: 15px;
     }
 
-    .about__lamp_img{
-        min-width: 28%;
-    }
-
     .about__image_section{
         margin: 40px auto;
     }
 
-    .swiper-slide img{
+    .mySwiper .swiper-slide img{
         height: 250px;
     }
 }
@@ -583,51 +760,23 @@ body{
         gap: 7.18%;
     }
 
-    .about__lamp_img{ 
-        min-width: 30%;
-    }
-
     .section__title{
         font-size: 2.3rem;
     }
 
-    .about__text{
-        font-size: 1rem;
-    }
-
-    .swiper-slide img{
+    .mySwiper .swiper-slide img{
         height: 270px;
     }
 
-}
-
-/* -----------------------------------------------------------------------------DESKTOP L*/
-/* -----------------------------------------------------------------------------DESKTOP L*/
-/* -----------------------------------------------------------------------------DESKTOP L*/
-
-@media (min-width: 1400px){
-
-    .about__lamp_img{ 
-        min-width: 29%;
-    }
-
-    .section__title{
-        font-size: 2.7rem;
-    }
-
-    .about__text{
-        font-size: 1.2rem;
-    }
-
-    .swiper-slide img{
-        height: 320px;
+    .skills__line{
+        width: 30%;
     }
 
 }
 
-/* -----------------------------------------------------------------------------DESKTOP XL*/
-/* -----------------------------------------------------------------------------DESKTOP XL*/
-/* -----------------------------------------------------------------------------DESKTOP XL*/
+/* -----------------------------------------------------------------------------DESKTOP L*/
+/* -----------------------------------------------------------------------------DESKTOP L*/
+/* -----------------------------------------------------------------------------DESKTOP L*/
 
 @media (min-width: 1440px){
 
@@ -642,11 +791,25 @@ body{
     .introduction{
         padding-left: 15%;
     }
-
-    .swiper-slide img{
+  
+    .section__title{
+        font-size: 2.7rem;
+    }
+        
+    .mySwiper .swiper-slide img{
         height: 376px;
     }
 
+    .skills__line{
+        width: 25%;
+    }
+
+    .experience__text{
+        margin-bottom: 0px;
+    }
+
+    
 }
+
 
 
