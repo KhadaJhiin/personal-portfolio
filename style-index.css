@@ -29,9 +29,9 @@ body.noscroll {
 /* ---------------------------------------------------------------------------MOBILE S */
 /* ---------------------------------------------------------------------------MOBILE S */
 /* ---------------------------------------------------------------------------MOBILE S */
-/*----HEADER----*/
-/*----HEADER----*/
-/*----HEADER----*/
+
+
+/*----BEGGINING OF THE HEADER----*/
 
 body{
     font-size: 16px;
@@ -66,7 +66,6 @@ body{
     width: 100%;
     height: 120px;
     display: flex;
-    padding-top: 20px;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(2, 21, 38, 0.7);
@@ -87,7 +86,7 @@ body{
 
 .header__logo{
     display: block;
-    width: 135px;
+    width: clamp(8.438rem, 4.853rem + 15.931vw, 12.5rem);
     padding: 0px;
     margin-left: 8%;
     transition: transform 0.5s ease;
@@ -98,9 +97,9 @@ body{
 }
 
 .header__menu-btn{
-    max-width: 45px;
+    width: clamp(2.813rem, 1.71rem + 4.902vw, 4.063rem);
     cursor: pointer;
-    margin-right: 8%;
+    margin-right: 10%;
 }
 
 .header__nav{
@@ -191,9 +190,9 @@ body{
     display: none;
 }
 
-/*----MAIN------*/
-/*----MAIN------*/
-/*----MAIN------*/
+/*----END OF HEADER----*/
+
+/*----BEGGINING OF INTRODUCTION------*/
 
 .section{
     min-height: calc(100vh - 120px);
@@ -211,7 +210,7 @@ body{
 .section__title{
     margin-bottom: 20px;
     color: var(--highlightedTextColor);
-    font-size: 2rem;
+    font-size: clamp(2rem, 1.682rem + 1.455vw, 2.3rem);
 }
 
 .introduction{
@@ -249,9 +248,14 @@ body{
     transform: translateY(-2px);
 }
 
+/*----END OF INTRODUCTION------*/
+
+/*----BEGGINING OF ABOUT------*/
+
 .about{
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     padding-bottom: 100px;
 }
 
@@ -262,12 +266,15 @@ body{
 .about__info{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+}
+
+.about__info .section__title{
+    margin-left: auto;
 }
 
 .about__text{
     text-align: justify;
-    font-size: clamp(1rem, 1vw + 1.3vh, 1.3rem);
+    font-size: clamp(1rem, 0.559rem + 1.961vw, 1.5rem);
 }
 
 .about__text_highlight{
@@ -292,7 +299,7 @@ body{
 .mySwiper .swiper-slide img{
     display: block;
     width: 100%;
-    height: 180px;
+    height: clamp(11.25rem, 2.978rem + 36.765vw, 20.625rem);
 }
 
 .about-pagination {
@@ -312,6 +319,10 @@ body{
     background: var(--highlightedTextColor); 
 }
 
+/*----END OF ABOUT------*/
+
+/*----BEGGINING OF EXPERIENCE------*/
+
 .lineTop{
     margin-left: auto;
     width: 83%;
@@ -327,7 +338,6 @@ body{
 
 .experience__title{
     font-size: clamp(1.2rem, 1.2vw + 1.7vh, 1.8rem);
-    /* font-size: 1.25rem; */
     margin-left: auto;
     color: var(--highlightedTextColor);
 }
@@ -470,35 +480,19 @@ body{
     background: var(--highlightedTextColor);
     color: var(--basicBlack);
 }
-
-
-
-
 /*----FOOTER----*/
-/*----FOOTER----*/
-/*----FOOTER----*/
-
-/* ---------------------------------------------------------------------------MOBILE l */
-/* ---------------------------------------------------------------------------MOBILE l */
-/* ---------------------------------------------------------------------------MOBILE l */
-@media (min-width: 480px){
-    /*----HEADER----*/
-    /*----HEADER----*/
-    /*----HEADER----*/
-    body{
-        padding-top: 160px;
-    }
-}
 
 /* ---------------------------------------------------------------------------TABLET S */
 /* ---------------------------------------------------------------------------TABLET S */
 /* ---------------------------------------------------------------------------TABLET S */
 @media (min-width: 600px){
-    /*----HEADER----*/
-    /*----HEADER----*/
-    /*----HEADER----*/
-    .mySwiper .swiper-slide img{
-        height: 250px;
+
+    body{
+        padding-top: 160px;
+    }
+
+    .header{
+        height: 150px;
     }
 
     .experience__image{
@@ -522,26 +516,7 @@ body{
 /* --------------------------------------------------------------------------TABLET L*/
 
 @media (min-width: 768px){
-    /*----HEADER----*/
-    /*----HEADER----*/
-    /*----HEADER----*/
-
-    body{
-        padding-top: 200px;
-    }
-
-    .header__logo{
-        width: 200px;
-    }
-
-    .header__menu-btn{
-        max-width: 65px;
-        right: 10%;
-    }
     
-    /*----MAIN----*/
-    /*----MAIN----*/
-    /*----MAIN----*/
     .introduction{
         min-height: calc(100vh - 200px);
         padding-bottom: 250px;
@@ -549,17 +524,11 @@ body{
 
     .section__title{
         margin-bottom: 40px;
-        font-size: 2.5rem;
+        /* font-size: 2.5rem; */
     }
 
     .about__image_section{
         margin: 60px auto;
-    }
-
-    .mySwiper .swiper-slide img{
-        display: block;
-        width: 100%;
-        height: 330px;
     }
 
     .experience__skills ul li i{
@@ -573,6 +542,8 @@ body{
 /* -----------------------------------------------------------------------------DESKTOP XS */
 
 @media (min-width: 900px){
+    /* BEGGINING OF THE HEADER */
+
     body{
         display: flex;
         justify-content: center;
@@ -585,6 +556,11 @@ body{
 
     .overlay {
         display: none;
+    }
+
+    .header{
+        padding-top: 20px;
+        height: 120px;
     }
 
     .header__logo{
@@ -650,9 +626,10 @@ body{
         color: var(--highlightedTextColor);
     }
 
-    /*----MAIN----*/
-    /*----MAIN----*/
-    /*----MAIN----*/
+    /* END OF THE HEADER */
+
+    /* BEGGINING OF INTRODUCTION */
+
     .introduction{
         min-height: calc(100vh - 120px);
         font-size: clamp(0.9rem, 1vw + 0.5vh, 1.5rem);
@@ -668,27 +645,37 @@ body{
         font-size: clamp(1.5rem, 2vw + 1vh, 2rem);
     }
 
+    /* END OF INTRODUCTION */
+
+    /* BEGGINING OF ABOUT */
+
     .about{
-        display: flex;
-        padding-top: 120px;
-        gap: 7.18%;
+        flex-direction: row;
+        gap: 7%;
+        align-items: flex-end;
     }
 
     .about__lamp_img{
-        position: relative;
         display: flex;
-        min-width: 30%;
         align-items: flex-end;
-        min-height: 750px;
+        min-width: 23%;
+        height: 600px;
+        overflow: hidden; 
     }
     
     .about__lamp_img img{
         width: 100%;
-        margin-bottom: 6%;
+        transform: scaleY(1.2);  
+        transform-origin: bottom; 
+        margin-bottom: clamp(3rem, 9.333rem + -10.37vw, 0rem);
     }
 
     .about__info{
-        min-width: 46.9%;
+        min-width: 46.5%;
+    }
+
+    .about__text{
+        font-size: 1.2rem;
     }
 
     .section__title{
@@ -703,7 +690,7 @@ body{
         width: 67%;
         margin-left: auto;    
         margin-bottom: 50px;
-        font-size: clamp(1rem, 1vw + 1.3vh, 1.3rem);
+        font-size: clamp(1rem, 0.5vw + 0.8vh, 1.3rem);
     }
 
     .experience__skills{
@@ -715,8 +702,6 @@ body{
         height: 2px;
     }
         
-    /*----FOOTER----*/
-    /*----FOOTER----*/
     /*----FOOTER----*/
     
 }
@@ -755,17 +740,12 @@ body{
         font-size: 1rem;
     }
 
-    .about{
-        padding-top: 120px;
-        gap: 7.18%;
-    }
-
     .section__title{
         font-size: 2.3rem;
     }
 
     .mySwiper .swiper-slide img{
-        height: 270px;
+        height: 290px;
     }
 
     .skills__line{
@@ -791,7 +771,7 @@ body{
     .introduction{
         padding-left: 15%;
     }
-  
+
     .section__title{
         font-size: 2.7rem;
     }
@@ -806,6 +786,19 @@ body{
 
     .experience__text{
         margin-bottom: 0px;
+    }
+    
+    .about__lamp_img{
+        min-width: 30%;
+        min-height: 750px;
+        overflow: visible;
+    }
+    
+    .about__lamp_img img{
+        width: 100%;
+        margin-bottom: 6%;
+        transform: none;
+        transform-origin: center;
     }
 
     
