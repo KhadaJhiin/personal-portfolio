@@ -376,13 +376,7 @@ body{
     flex-direction: column;
     gap: 15px;
     justify-content: center;
-    padding-top: 20px
-    
-    
-    
-    
-    
-    ;
+    padding-top: 20px;
 }
 
 .experience__skills ul li{
@@ -487,6 +481,88 @@ body{
     background: var(--highlightedTextColor);
     color: var(--basicBlack);
 }
+
+/*-----BEGINNING OF PROJECTS */
+
+.projects__title{
+    display: flex;
+    flex-direction: column;
+}
+
+.projects__title .section__title{
+    margin-left: auto;
+}
+
+.projects__preview{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__projects{
+    position: relative;
+}
+
+.nav__projects::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 1px;
+    background-color: var(--highlightedTextColor);
+}
+
+.nav__projects::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    height: 1px;
+    background-color: var(--highlightedTextColor);
+}
+
+.right-border{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 15%;
+    background-color: var(--highlightedTextColor);
+}
+
+.left-border{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 15%;
+    background-color: var(--highlightedTextColor);
+}
+
+.nav__projects ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+
+
+.singleLineBot{
+    margin-right: auto;
+    width: 83%;
+    height: 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--highlightedTextColor);  
+}   
+
+
+
+
+
+/*-----END OF PROJECTS */
 /*----FOOTER----*/
 
 /* ---------------------------------------------------------------------------TABLET S */
