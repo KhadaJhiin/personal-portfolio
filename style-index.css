@@ -23,7 +23,7 @@ body.noscroll {
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
-    max-width: 1440px;
+    width: 100vw;
 }
 
 /* ---------------------------------------------------------------------------MOBILE S */
@@ -64,6 +64,7 @@ body{
     right: 0;
     left: 0;
     width: 100%;
+    max-width: 1440px;
     height: 120px;
     display: flex;
     justify-content: space-between;
@@ -192,10 +193,18 @@ body{
 
 /*----END OF HEADER----*/
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 /*----BEGGINING OF INTRODUCTION------*/
 
 .section{
     min-height: calc(100vh - 120px);
+    max-width: 1440px;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -322,6 +331,13 @@ body{
 /*----END OF ABOUT------*/
 
 /*----BEGGINING OF EXPERIENCE------*/
+
+.experience{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 100px;
+}
 
 .lineTop{
     margin-left: auto;
@@ -535,6 +551,10 @@ body{
     color: var(--highlightedTextColor);
 }
 
+.project__slider{
+    max-width: 100%;
+}
+
 .project__title{
     margin-bottom: 15px
 }
@@ -553,9 +573,14 @@ body{
     font-size: 1.2rem;
 }
 
+.view__container i:hover{
+    color: var(--highlightedTextColor);
+}
+
 .project__text{
     margin-top: 15px;
     text-align: justify;
+    max-width: 100%;
 }
 
 
@@ -608,9 +633,81 @@ body{
 }  
 /* end border */
 
-
 /*-----END OF PROJECTS */
+
+/* Beginning of contact section */
+
+.contact__text{
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.contact__email{
+    color: var(--highlightedTextColor);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contact__email-link{
+    cursor: pointer;
+}
+
+.contact__social{
+    margin-top: 70px;
+}
+
+.contact__social-title{
+    color: var(--highlightedTextColor);
+}
+
+.contact__social-list{
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
+
+.contact__social-list li{
+    font-size: 1.5rem;
+}
+
+
+
+/* End of contact section */
+
+
 /*----FOOTER----*/
+
+footer{
+    background-color: var(--basicBlack);
+    width:100%;
+    max-width: none;
+}
+
+.footer__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    gap: 10px;
+}
+
+.footer__spans{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.footer__logo{
+    max-width: 150px;
+}
+
+
+/* -----END FOOTER */
 
 /* ---------------------------------------------------------------------------TABLET S */
 /* ---------------------------------------------------------------------------TABLET S */
@@ -650,6 +747,10 @@ body{
     .singleLineBot{
         width: 70%;
     }  
+
+    .contact__text{
+        margin-bottom: 70px;
+    }
 }
 
 
@@ -698,6 +799,7 @@ body{
 
     .view__container i{
         font-size: 2rem;
+        cursor: pointer;
     }
 
 }
@@ -799,7 +901,7 @@ body{
         min-height: calc(100vh - 120px);
         font-size: clamp(0.9rem, 1vw + 0.5vh, 1.5rem);
         padding-bottom: 0px;
-        padding-left: 17%;
+        /* padding-left: 17%; */
     }
 
     .intro__title_name{
@@ -949,8 +1051,13 @@ body{
         flex-grow: 0; 
     }
 
+    .project__title{
+        color: var(--highlightedTextColor);
+        font-size: 1.6rem;
+    }
+
     .projects__image{
-        max-width: 90%;
+        max-width: 85%;
     }
 
     .project__text{
@@ -967,8 +1074,53 @@ body{
 
 
     /* End of projects */
+
+/* Beginning of contact section */
+
+    .contact__container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contact__info{
+        width: 45%;
+    }
+
+    .contact__social{
+        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+
+/* End of contact section */
+
         
-    /*----FOOTER----*/
+/*----FOOTER----*/
+
+    .footer__container {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        width: 100%; 
+        position: relative;
+        padding: 50px 50px;
+    }
+
+    .footer__spans {
+        flex: 1; 
+        text-align: center; 
+        margin: 0 auto; 
+        font-size: 0.9rem;
+    }
+
+    .footer__logo {
+        position: absolute;
+        right: 8%;
+        /* max-width: 150px; */
+    }
+
+/*----FOOTER----*/
     
 }
 /* -----------------------------------------------------------------------------DESKTOP S */
@@ -1003,6 +1155,10 @@ body{
 
     .mySwiper .swiper-slide img{
         height: 290px;
+    }
+
+    .contact__social{
+        padding-right: 8%;
     }
 }
 
@@ -1052,7 +1208,7 @@ body{
     }
 
     .introduction{
-        padding-left: 15%;
+        /* padding-left: 15%; */
     }
 
     .section__title{
@@ -1088,6 +1244,9 @@ body{
         transform-origin: center;
     }
 
+    .contact__social{
+        padding-right: 8%;
+    }
     
 }
 
