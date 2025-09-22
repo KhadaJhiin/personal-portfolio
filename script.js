@@ -44,6 +44,33 @@ const experienceSwiper = new Swiper(".my-slider", {
     },
 });
 
+const project__swiper = new Swiper('.project__slider', {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides:false,
+    slidesPerView: "auto",
+    spaceBetween: 2,
+    loop:false,
+    speed: 1000,
+});
+
+// Seleccionar todos los botones de navegación
+const navButtons = document.querySelectorAll('.nav-btn');
+
+// Añadir un "event listener" a cada botón
+navButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        // Remover la clase 'active' de todos los botones
+        navButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Añadir la clase 'active' al botón que se hizo clic
+        button.classList.add('active');
+
+        // Mover el slider al slide correspondiente
+        project__swiper.slideTo(index);
+    });
+});
+
 // ---------------------------------------Swiper section
 // ---------------------------------------Swiper section
 
@@ -99,6 +126,9 @@ window.addEventListener("scroll", () => {
     lastScrollMobile = currentScroll;
 
 });
+
+
+
 
 
 
